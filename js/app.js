@@ -66,7 +66,10 @@
     check: '<circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/>',
     star: '<path d="M12 4l2 5.5 5.5 2-5.5 2-2 5.5-2-5.5-5.5-2 5.5-2z"/>',
     settings: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9L7 7M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/>',
-    download: '<path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 21h16"/>'
+    download: '<path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 21h16"/>',
+    truck: '<path d="M2 6h12v10H2z"/><path d="M14 9h4l3 3v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>',
+    refresh: '<path d="M20 11a8 8 0 0 0-14.5-4.5L4 8"/><path d="M4 3v5h5"/><path d="M4 13a8 8 0 0 0 14.5 4.5L20 16"/><path d="M20 21v-5h-5"/>',
+    back: '<path d="M15 5l-7 7 7 7"/>'
   };
   const PRODUCT_ICONS = ['box', 'leaf', 'grain', 'cup', 'drop', 'bottle', 'sparkle'];
   const icon = (n, cls = '') => `<svg class="i ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n] || ICONS.box}</svg>`;
@@ -82,7 +85,8 @@
 
   // ── 공통 조각 ─────────────────────────────────────────
   function Thumb(p, size = '') {
-    if (p.image) return `<div class="thumb ${size}"><img src="${esc(p.image)}" alt="" loading="lazy"></div>`;
+    const img = (p.images && p.images[0]) || p.image;
+    if (img) return `<div class="thumb photo ${size}"><img src="${esc(img)}" alt="" loading="lazy"></div>`;
     return `<div class="thumb ${size}" style="--tone:${esc(p.color || '#E8E4DA')}">${icon(p.icon || 'box')}</div>`;
   }
 
@@ -107,6 +111,7 @@
       <h2>${t('locked_title')}</h2>
       <p class="muted">${t('locked_sub')}</p>
       <a class="btn btn-primary" href="#/login">${t('login')}</a>
+      <button class="btn btn-ghost demo-btn" data-act="demo">${t('demo_browse')}</button>
     </section>`;
   }
 
@@ -126,7 +131,22 @@
       </section>
       <div class="search"><input id="q" type="search" placeholder="${t('search_ph')}" value="${esc(S.q)}" autocomplete="off"></div>
       <div class="chips">${cats.map(k => `<button class="chip ${S.cat === k ? 'on' : ''}" data-act="cat" data-k="${esc(k)}">${k === 'all' ? t('cat_all') : esc(L(c.categories[k]))}</button>`).join('')}</div>
+      ${!S.q && S.cat === 'all' ? `
+      <div class="sec-head"><h2>${t('featured')}</h2></div>
+      <div class="hscroll">${c.products.slice(0, 4).map(Feature).join('')}</div>
+      <div class="sec-head"><h2>${t('all_products')}</h2></div>` : ''}
       <div class="grid" id="grid">${Grid()}</div>`;
+  }
+
+  function Feature(p) {
+    return `<a class="feature" href="#/p/${esc(p.id)}">
+      ${Thumb(p)}
+      <div class="feature-body">
+        <p class="muted small">${esc(L((S.catalog.categories || {})[p.category]))}</p>
+        <h3>${esc(L(p.name))}</h3>
+        <p class="small feature-sum">${esc(L(p.summary))}</p>
+        ${S.user ? `<p class="price">${t('price_from', { p: money(p.tiers[p.tiers.length - 1].price) })}</p>` : `<p class="locked">${icon('lock')} ${t('price_locked')}</p>`}
+      </div></a>`;
   }
 
   function Grid() {
@@ -149,31 +169,90 @@
       </a>`).join('');
   }
 
-  // ── 제품 상세 ──────────────────────────────────────────
+  // ── 제품 상세 (실제 쇼핑앱형 상세페이지) ───────────────
   function Detail(id) {
     const p = find(id);
     if (!p) return `<p class="empty">${t('not_found')}</p>`;
     if (S.qtyFor !== id) { S.qty = p.moq; S.qtyFor = id; }
+    const imgs = (p.images && p.images.length) ? p.images : (p.image ? [p.image] : []);
+    const low = p.tiers[p.tiers.length - 1].price, high = p.tiers[0].price;
+    const related = [...S.catalog.products.filter(x => x.id !== p.id && x.category === p.category),
+                     ...S.catalog.products.filter(x => x.id !== p.id && x.category !== p.category)].slice(0, 4);
+    const svc = S.catalog.service;
     return `
-      <a class="back" href="#/">‹ ${t('nav_home')}</a>
-      ${Thumb(p, 'lg')}
-      <section class="pad">
-        <p class="muted small">${esc(L((S.catalog.categories || {})[p.category]))}</p>
+    <div class="detail">
+      <div class="gallery-wrap">
+        <a class="fab-back" href="#/" aria-label="back">${icon('back')}</a>
+        ${imgs.length ? `<div class="gallery" id="gallery">${imgs.map(src => `<div class="slide"><img src="${esc(src)}" alt=""></div>`).join('')}</div>
+          ${imgs.length > 1 ? `<div class="dots" id="dots">${imgs.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>` : ''}`
+          : Thumb(p, 'lg')}
+      </div>
+
+      <section class="info">
+        <div class="info-top"><span class="cat">${esc(L((S.catalog.categories || {})[p.category]))}</span>${Stock(p)}</div>
         <h1 class="title">${esc(L(p.name))}</h1>
-        ${Stock(p)}
-        <p class="desc">${esc(L(p.desc))}</p>
+        ${p.summary ? `<p class="summary-line">${esc(L(p.summary))}</p>` : ''}
+        ${S.user
+          ? `<p class="price-range"><strong>${money(low)}</strong> ~ ${money(high)} <span>${t('per_box')}</span></p>`
+          : `<p class="price-range locked">${icon('lock')} ${t('price_locked')}</p>`}
+        <div class="facts">
+          <span>${t('per_unit', { n: p.perBox })}</span><span>${t('moq', { n: p.moq })}</span><span>${t('ship_today')}</span>
+        </div>
       </section>
-      ${S.user ? PriceBlock(p) : Locked()}
-      <section class="pad">
-        <h2>${t('specs')}</h2>
-        <dl class="specs">
-          <div><dt>${t('spec_pack')}</dt><dd>${t('per_unit', { n: p.perBox })}</dd></div>
-          <div><dt>${t('spec_moq')}</dt><dd>${t('moq', { n: p.moq })}</dd></div>
-          <div><dt>${t('spec_origin')}</dt><dd>${esc(L(p.origin))}</dd></div>
-          <div><dt>${t('spec_size')}</dt><dd>${esc(p.size)}</dd></div>
-          <div><dt>${t('spec_weight')}</dt><dd>${esc(p.weight)}</dd></div>
-        </dl>
-      </section>`;
+
+      <nav class="dtabs">
+        <button data-act="jump" data-k="sec-detail" class="on">${t('tab_detail')}</button>
+        <button data-act="jump" data-k="sec-price">${t('tab_price')}</button>
+        <button data-act="jump" data-k="sec-info">${t('tab_info')}</button>
+      </nav>
+
+      <section id="sec-detail" class="anchor">
+        ${p.points ? `<div class="points">${p.points.map(pt => `
+          <div class="point"><div class="point-ic">${icon(pt.icon)}</div><b>${esc(L(pt.t))}</b><span>${esc(L(pt.d))}</span></div>`).join('')}</div>` : ''}
+        <p class="desc pad">${esc(L(p.desc))}</p>
+        ${(p.sections || []).map((sec, i) => `
+          <article class="story">
+            ${sec.img ? `<div class="story-img"><img src="${esc(sec.img)}" alt="" loading="lazy"></div>` : ''}
+            <div class="story-text"><span class="story-no">0${i + 1}</span><h2>${esc(L(sec.t))}</h2><p>${esc(L(sec.d))}</p></div>
+          </article>`).join('')}
+        ${p.recommend ? `<div class="pad"><h3 class="mini-title">${t('recommend_for')}</h3>
+          <div class="tags">${(p.recommend[S.lang] || p.recommend.ko).map(r => `<span>${esc(r)}</span>`).join('')}</div></div>` : ''}
+      </section>
+
+      <section id="sec-price" class="anchor">${S.user ? PriceBlock(p) : Locked()}</section>
+
+      <section id="sec-info" class="anchor">
+        <div class="panel">
+          <h2>${t('specs')}</h2>
+          <dl class="specs">
+            <div><dt>${t('spec_pack')}</dt><dd>${t('per_unit', { n: p.perBox })}</dd></div>
+            <div><dt>${t('spec_moq')}</dt><dd>${t('moq', { n: p.moq })}</dd></div>
+            <div><dt>${t('spec_origin')}</dt><dd>${esc(L(p.origin))}</dd></div>
+            ${p.shelf ? `<div><dt>${t('spec_shelf')}</dt><dd>${esc(L(p.shelf))}</dd></div>` : ''}
+            <div><dt>${t('spec_size')}</dt><dd>${esc(p.size)}</dd></div>
+            <div><dt>${t('spec_weight')}</dt><dd>${esc(p.weight)}</dd></div>
+          </dl>
+        </div>
+        ${svc ? `<div class="panel"><h2>${esc(L(svc.title))}</h2>
+          ${svc.items.map(it => `<div class="svc"><div class="svc-ic">${icon(it.icon)}</div><div><b>${esc(L(it.t))}</b><p>${esc(L(it.d))}</p></div></div>`).join('')}
+        </div>` : ''}
+      </section>
+
+      ${related.length ? `<div class="sec-head"><h2>${t('related')}</h2></div>
+        <div class="hscroll small-cards">${related.map(r => `
+          <a class="mini-card" href="#/p/${esc(r.id)}">${Thumb(r)}<b>${esc(L(r.name))}</b>
+          ${S.user ? `<span class="price">${t('price_from', { p: money(r.tiers[r.tiers.length - 1].price) })}</span>` : ''}</a>`).join('')}</div>` : ''}
+    </div>
+    ${BuyBar(p)}`;
+  }
+
+  function BuyBar(p) {
+    if (!S.user) return `<div class="buybar">
+      <button class="btn btn-ghost" data-act="demo">${t('demo_browse')}</button>
+      <a class="btn btn-primary" href="#/login">${t('login')}</a></div>`;
+    return `<div class="buybar">
+      <div class="buybar-total"><span>${t('est_total')} · ${S.qty}${S.lang === 'ko' ? '' : ' '}${t('unit_box')}</span><strong id="buyTotal">${money(unitPrice(p, S.qty) * S.qty)}</strong></div>
+      <button class="btn btn-primary" data-act="add" data-id="${esc(p.id)}">${t('add_cart')}</button></div>`;
   }
 
   function PriceBlock(p) {
@@ -183,7 +262,6 @@
         <table class="tiers" id="tiers">${TierRows(p)}</table>
         <div class="qtyrow"><span>${t('qty')}</span>${Stepper('qty', S.qty, p.moq, p.id)}<span class="muted">${t('unit_box')}</span></div>
         <div id="calc">${Calc(p)}</div>
-        <button class="btn btn-primary block" data-act="add" data-id="${esc(p.id)}">${t('add_cart')}</button>
       </section>`;
   }
 
@@ -216,6 +294,8 @@
     if (input) input.value = S.qty;
     $('#tiers').innerHTML = TierRows(p);
     $('#calc').innerHTML = Calc(p);
+    const bar = view.querySelector('.buybar-total');
+    if (bar) bar.outerHTML = BuyBar(p).match(/<div class="buybar-total">[\s\S]*?<\/strong><\/div>/)[0];
   }
 
   // ── 견적함 ─────────────────────────────────────────────
@@ -402,7 +482,7 @@
 
   function AdminEdit(p) {
     const isNew = !p;
-    p = p || { id: '', icon: 'box', color: '#E8E4DA', image: '', category: Object.keys(S.catalog.categories)[0],
+    p = p || { id: '', icon: 'box', color: '#E8E4DA', images: [], category: Object.keys(S.catalog.categories)[0],
       name: { ko: '', vi: '' }, desc: { ko: '', vi: '' }, perBox: 1, moq: 1,
       tiers: [{ min: 1, price: 0 }], stock: 'in', restock: '', origin: { ko: '대한민국', vi: 'Hàn Quốc' }, size: '', weight: '' };
     const cats = S.catalog.categories;
@@ -416,7 +496,7 @@
         <label>아이콘</label>
         <div class="iconpick">${PRODUCT_ICONS.map(n => `<label class="${(p.icon || 'box') === n ? 'on' : ''}"><input type="radio" name="icon" value="${n}" ${(p.icon || 'box') === n ? 'checked' : ''}>${icon(n)}</label>`).join('')}</div>
         <label>배경 톤<input name="color" type="color" value="${esc(p.color)}"></label>
-        <label>사진 주소 (선택 — 넣으면 아이콘 대신 표시)<input name="image" value="${esc(p.image)}" placeholder="images/제품.jpg"></label>
+        <label>사진 주소 (여러 장은 쉼표로 구분 — 첫 장이 대표 사진)<input name="images" value="${esc((p.images || (p.image ? [p.image] : [])).join(', '))}" placeholder="images/제품-1.jpg, images/제품-2.jpg"></label>
         <label>카테고리<select name="category">${Object.keys(cats).map(k => `<option value="${esc(k)}" ${k === p.category ? 'selected' : ''}>${esc(cats[k].ko)}</option>`).join('')}</select></label>
         <label>제품명 (한국어)<input name="name_ko" value="${esc(p.name.ko)}"></label>
         <label>제품명 (베트남어)<input name="name_vi" value="${esc(p.name.vi)}"></label>
@@ -460,7 +540,7 @@
     if (!tiers.length) return toast('가격 구간을 하나 이상 입력해 주세요');
     const old = find(id) || {};
     const p = {
-      ...old, id, icon: f.icon || 'box', color: f.color, image: f.image.trim(), category: f.category,
+      ...old, id, icon: f.icon || 'box', color: f.color, images: f.images.split(',').map(x => x.trim()).filter(Boolean), category: f.category,
       name: { ko: f.name_ko.trim(), vi: f.name_vi.trim() }, desc: { ko: f.desc_ko.trim(), vi: f.desc_vi.trim() },
       perBox: Math.max(1, parseInt(f.perBox, 10) || 1), moq: tiers[0].min, tiers,
       stock: f.stock, restock: f.restock, origin: { ko: f.origin_ko.trim(), vi: f.origin_vi.trim() },
@@ -500,6 +580,12 @@
       default: html = Home();
     }
     view.innerHTML = html;
+    document.body.classList.toggle('detail-mode', parts[0] === 'p');
+    const g = $('#gallery');
+    if (g) g.addEventListener('scroll', () => {
+      const i = Math.round(g.scrollLeft / g.clientWidth);
+      document.querySelectorAll('#dots i').forEach((d, k) => d.classList.toggle('on', k === i));
+    }, { passive: true });
     renderNav(tab);
     window.scrollTo(0, keepScroll === true ? y : 0);
   }
@@ -532,6 +618,16 @@
     const { act, k, id } = b.dataset;
     switch (act) {
       case 'lang': setLang(S.lang === 'ko' ? 'vi' : 'ko'); break;
+      case 'demo':
+        S.user = await API.login(S.lang === 'vi' ? 'Đối tác demo' : '데모 거래처', 'DEMO');
+        toast(t('welcome', { c: S.user.company })); rerender();
+        break;
+      case 'jump': {
+        const el = document.getElementById(k);
+        if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 118, behavior: 'smooth' });
+        document.querySelectorAll('.dtabs button').forEach(x => x.classList.toggle('on', x === b));
+        break;
+      }
       case 'setlang': setLang(k); break;
       case 'cat': S.cat = k; rerender(); break;
       case 'dec':

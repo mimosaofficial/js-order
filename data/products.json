@@ -26,7 +26,6 @@
       "id": "seaweed-72",
       "icon": "leaf",
       "color": "#E4E2D6",
-      "image": "",
       "category": "food",
       "name": {
         "ko": "도시락김 4g × 72봉",
@@ -59,13 +58,97 @@
         "vi": "Hàn Quốc"
       },
       "size": "40×30×25cm",
-      "weight": "3.2kg"
+      "weight": "3.2kg",
+      "images": [
+        "images/seaweed-1.svg",
+        "images/seaweed-2.svg"
+      ],
+      "summary": {
+        "ko": "참기름 향 가득, 바삭한 소포장 도시락김",
+        "vi": "Rong biển giòn thơm dầu mè, gói nhỏ tiện lợi"
+      },
+      "points": [
+        {
+          "icon": "leaf",
+          "t": {
+            "ko": "참기름 2번 굽기",
+            "vi": "Nướng 2 lần với dầu mè"
+          },
+          "d": {
+            "ko": "고소한 향이 오래 가요",
+            "vi": "Hương thơm lâu"
+          }
+        },
+        {
+          "icon": "box",
+          "t": {
+            "ko": "4g 소포장",
+            "vi": "Gói nhỏ 4g"
+          },
+          "d": {
+            "ko": "낱개 판매에 딱 맞아요",
+            "vi": "Phù hợp bán lẻ từng gói"
+          }
+        },
+        {
+          "icon": "check",
+          "t": {
+            "ko": "질소 충전",
+            "vi": "Bơm khí nitơ"
+          },
+          "d": {
+            "ko": "끝까지 바삭해요",
+            "vi": "Giòn đến cuối"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "img": "images/seaweed-2.svg",
+          "t": {
+            "ko": "두 번 구워 더 바삭하게",
+            "vi": "Nướng hai lần, giòn hơn"
+          },
+          "d": {
+            "ko": "엄선한 원초를 참기름과 해바라기유로 두 번 구워 눅눅함 없이 바삭해요. 기름이 겉돌지 않아 손에 덜 묻어요.",
+            "vi": "Rong biển chọn lọc được nướng hai lần với dầu mè và dầu hướng dương, giòn và không bị ỉu, ít dính tay."
+          }
+        },
+        {
+          "img": "images/seaweed-1.svg",
+          "t": {
+            "ko": "진열하기 좋은 소포장",
+            "vi": "Đóng gói nhỏ dễ trưng bày"
+          },
+          "d": {
+            "ko": "4g 소포장에 질소를 채워 유통 중에도 모양이 유지돼요. 박스째 진열하거나 낱개로 판매할 수 있어요.",
+            "vi": "Gói 4g bơm khí nitơ giữ dáng khi vận chuyển. Có thể trưng bày nguyên thùng hoặc bán lẻ."
+          }
+        }
+      ],
+      "recommend": {
+        "ko": [
+          "편의점",
+          "마트",
+          "도시락 업체",
+          "캠핑·레저 매장"
+        ],
+        "vi": [
+          "Cửa hàng tiện lợi",
+          "Siêu thị",
+          "Cơm hộp",
+          "Cửa hàng dã ngoại"
+        ]
+      },
+      "shelf": {
+        "ko": "제조일로부터 12개월",
+        "vi": "12 tháng từ ngày sản xuất"
+      }
     },
     {
       "id": "brown-rice-1kg",
       "icon": "grain",
       "color": "#ECE4D4",
-      "image": "",
       "category": "food",
       "name": {
         "ko": "유기농 현미 1kg",
@@ -98,13 +181,97 @@
         "vi": "Hàn Quốc"
       },
       "size": "35×25×20cm",
-      "weight": "10.4kg"
+      "weight": "10.4kg",
+      "images": [
+        "images/rice-1.svg",
+        "images/rice-2.svg"
+      ],
+      "summary": {
+        "ko": "유기농 인증 국내산 현미, 1kg 소포장",
+        "vi": "Gạo lứt hữu cơ Hàn Quốc, túi 1kg"
+      },
+      "points": [
+        {
+          "icon": "check",
+          "t": {
+            "ko": "유기농 인증",
+            "vi": "Chứng nhận hữu cơ"
+          },
+          "d": {
+            "ko": "국내산 친환경 재배",
+            "vi": "Trồng thân thiện môi trường"
+          }
+        },
+        {
+          "icon": "grain",
+          "t": {
+            "ko": "올해 수확",
+            "vi": "Vụ mùa năm nay"
+          },
+          "d": {
+            "ko": "도정 후 바로 포장",
+            "vi": "Đóng gói ngay sau xay xát"
+          }
+        },
+        {
+          "icon": "box",
+          "t": {
+            "ko": "1kg 지퍼백",
+            "vi": "Túi zip 1kg"
+          },
+          "d": {
+            "ko": "보관이 편해요",
+            "vi": "Dễ bảo quản"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "img": "images/rice-2.svg",
+          "t": {
+            "ko": "씹을수록 고소한 현미",
+            "vi": "Càng nhai càng bùi"
+          },
+          "d": {
+            "ko": "쌀겨층과 씨눈을 살려 영양은 그대로, 백미와 섞어 지어도 부드러워요.",
+            "vi": "Giữ nguyên lớp cám và mầm gạo, nấu chung với gạo trắng vẫn mềm."
+          }
+        },
+        {
+          "img": "images/rice-1.svg",
+          "t": {
+            "ko": "소매 판매용 1kg 패키지",
+            "vi": "Bao bì 1kg cho bán lẻ"
+          },
+          "d": {
+            "ko": "내용물이 보이는 창과 지퍼가 있는 크라프트 봉투라 매장 진열 효과가 좋아요.",
+            "vi": "Túi giấy kraft có cửa sổ nhìn thấy gạo và khóa zip, trưng bày đẹp mắt."
+          }
+        }
+      ],
+      "recommend": {
+        "ko": [
+          "유기농 매장",
+          "반찬가게",
+          "온라인 식품몰",
+          "단체급식"
+        ],
+        "vi": [
+          "Cửa hàng hữu cơ",
+          "Cửa hàng thực phẩm",
+          "Shop online",
+          "Bếp ăn tập thể"
+        ]
+      },
+      "shelf": {
+        "ko": "제조일로부터 12개월 (서늘한 곳 보관)",
+        "vi": "12 tháng (bảo quản nơi mát)"
+      }
     },
     {
       "id": "coffee-mix-100",
       "icon": "cup",
       "color": "#E5DCD2",
-      "image": "",
       "category": "food",
       "name": {
         "ko": "3in1 커피믹스 100개입",
@@ -137,13 +304,97 @@
         "vi": "Hàn Quốc"
       },
       "size": "45×35×30cm",
-      "weight": "12kg"
+      "weight": "12kg",
+      "images": [
+        "images/coffee-1.svg",
+        "images/coffee-2.svg"
+      ],
+      "summary": {
+        "ko": "부드럽고 달콤한 3in1 커피믹스 100개입",
+        "vi": "Cà phê 3in1 êm dịu, hộp 100 gói"
+      },
+      "points": [
+        {
+          "icon": "cup",
+          "t": {
+            "ko": "부드러운 맛",
+            "vi": "Vị êm dịu"
+          },
+          "d": {
+            "ko": "누구나 좋아하는 밸런스",
+            "vi": "Cân bằng, dễ uống"
+          }
+        },
+        {
+          "icon": "box",
+          "t": {
+            "ko": "100개입",
+            "vi": "100 gói"
+          },
+          "d": {
+            "ko": "사무실 비치용 대용량",
+            "vi": "Dung tích lớn cho văn phòng"
+          }
+        },
+        {
+          "icon": "star",
+          "t": {
+            "ko": "재구매율 높음",
+            "vi": "Tỷ lệ mua lại cao"
+          },
+          "d": {
+            "ko": "납품 꾸준한 스테디셀러",
+            "vi": "Sản phẩm bán đều"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "img": "images/coffee-2.svg",
+          "t": {
+            "ko": "한 잔에 딱 맞는 비율",
+            "vi": "Tỷ lệ vừa vặn cho một tách"
+          },
+          "d": {
+            "ko": "커피, 크리머, 설탕을 한 스틱에 담아 물만 부으면 언제나 같은 맛이 나요.",
+            "vi": "Cà phê, kem và đường trong một gói, chỉ cần thêm nước nóng là có vị luôn như nhau."
+          }
+        },
+        {
+          "img": "images/coffee-1.svg",
+          "t": {
+            "ko": "납품용 대용량 박스",
+            "vi": "Hộp lớn cho cung cấp sỉ"
+          },
+          "d": {
+            "ko": "100개입 박스 10개가 한 박스로 들어가요. 사무실, 숙박업소, 탕비실 납품에 많이 찾아요.",
+            "vi": "Mỗi thùng gồm 10 hộp 100 gói. Được ưa chuộng cho văn phòng, khách sạn, phòng pantry."
+          }
+        }
+      ],
+      "recommend": {
+        "ko": [
+          "사무실",
+          "숙박업소",
+          "카페·탕비실",
+          "도매상"
+        ],
+        "vi": [
+          "Văn phòng",
+          "Khách sạn",
+          "Pantry",
+          "Đại lý sỉ"
+        ]
+      },
+      "shelf": {
+        "ko": "제조일로부터 18개월",
+        "vi": "18 tháng từ ngày sản xuất"
+      }
     },
     {
       "id": "cica-mask-10",
       "icon": "drop",
       "color": "#DEE2DD",
-      "image": "",
       "category": "beauty",
       "name": {
         "ko": "시카 진정 마스크팩 10매",
@@ -176,13 +427,97 @@
         "vi": "Hàn Quốc"
       },
       "size": "38×28×22cm",
-      "weight": "6.5kg"
+      "weight": "6.5kg",
+      "images": [
+        "images/mask-1.svg",
+        "images/mask-2.svg"
+      ],
+      "summary": {
+        "ko": "병풀 추출물로 진정되는 데일리 시트 마스크",
+        "vi": "Mặt nạ rau má làm dịu da hằng ngày"
+      },
+      "points": [
+        {
+          "icon": "leaf",
+          "t": {
+            "ko": "병풀 추출물",
+            "vi": "Chiết xuất rau má"
+          },
+          "d": {
+            "ko": "민감한 피부 진정",
+            "vi": "Làm dịu da nhạy cảm"
+          }
+        },
+        {
+          "icon": "drop",
+          "t": {
+            "ko": "에센스 25ml",
+            "vi": "Tinh chất 25ml"
+          },
+          "d": {
+            "ko": "넉넉하고 촉촉하게",
+            "vi": "Dồi dào, ẩm mượt"
+          }
+        },
+        {
+          "icon": "check",
+          "t": {
+            "ko": "피부 자극 테스트",
+            "vi": "Đã kiểm nghiệm kích ứng"
+          },
+          "d": {
+            "ko": "저자극 완료",
+            "vi": "Ít kích ứng"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "img": "images/mask-2.svg",
+          "t": {
+            "ko": "얇고 밀착되는 시트",
+            "vi": "Miếng mặt nạ mỏng, ôm sát"
+          },
+          "d": {
+            "ko": "얼굴 굴곡에 맞춘 얇은 시트가 에센스를 고르게 전달해요. 15–20분 붙였다 떼면 끝이에요.",
+            "vi": "Miếng mỏng ôm theo đường nét khuôn mặt, truyền tinh chất đều. Đắp 15–20 phút là xong."
+          }
+        },
+        {
+          "img": "images/mask-1.svg",
+          "t": {
+            "ko": "선물·진열용 10매 세트",
+            "vi": "Bộ 10 miếng làm quà, trưng bày"
+          },
+          "d": {
+            "ko": "민트 톤 파우치로 매장 진열 시 눈에 잘 띄어요. 낱장 판매도 가능해요.",
+            "vi": "Túi màu bạc hà nổi bật trên kệ. Có thể bán lẻ từng miếng."
+          }
+        }
+      ],
+      "recommend": {
+        "ko": [
+          "화장품 매장",
+          "드럭스토어",
+          "온라인 셀러",
+          "호텔 어메니티"
+        ],
+        "vi": [
+          "Cửa hàng mỹ phẩm",
+          "Nhà thuốc",
+          "Người bán online",
+          "Khách sạn"
+        ]
+      },
+      "shelf": {
+        "ko": "제조일로부터 30개월",
+        "vi": "30 tháng từ ngày sản xuất"
+      }
     },
     {
       "id": "hand-cream-50",
       "icon": "bottle",
       "color": "#EBE1DC",
-      "image": "",
       "category": "beauty",
       "name": {
         "ko": "보습 핸드크림 50ml",
@@ -215,13 +550,97 @@
         "vi": "Hàn Quốc"
       },
       "size": "30×25×18cm",
-      "weight": "4.1kg"
+      "weight": "4.1kg",
+      "images": [
+        "images/cream-1.svg",
+        "images/cream-2.svg"
+      ],
+      "summary": {
+        "ko": "끈적임 없이 스며드는 데일리 핸드크림",
+        "vi": "Kem dưỡng tay thấm nhanh, không nhờn"
+      },
+      "points": [
+        {
+          "icon": "drop",
+          "t": {
+            "ko": "빠른 흡수",
+            "vi": "Thấm nhanh"
+          },
+          "d": {
+            "ko": "바르고 바로 폰 사용",
+            "vi": "Dùng điện thoại ngay"
+          }
+        },
+        {
+          "icon": "sparkle",
+          "t": {
+            "ko": "은은한 향",
+            "vi": "Hương nhẹ nhàng"
+          },
+          "d": {
+            "ko": "화이트 플로럴",
+            "vi": "Hoa trắng"
+          }
+        },
+        {
+          "icon": "bottle",
+          "t": {
+            "ko": "50ml 휴대용",
+            "vi": "50ml bỏ túi"
+          },
+          "d": {
+            "ko": "선물세트 구성에 좋아요",
+            "vi": "Hợp làm quà tặng"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "img": "images/cream-2.svg",
+          "t": {
+            "ko": "가볍지만 오래가는 보습",
+            "vi": "Nhẹ nhưng dưỡng ẩm lâu"
+          },
+          "d": {
+            "ko": "시어버터와 세라마이드가 손을 촉촉하게 감싸고, 끈적임 없이 금방 스며들어요.",
+            "vi": "Bơ hạt mỡ và ceramide giữ ẩm cho da tay, thấm nhanh không nhờn rít."
+          }
+        },
+        {
+          "img": "images/cream-1.svg",
+          "t": {
+            "ko": "선물하기 좋은 패키지",
+            "vi": "Bao bì sang trọng để làm quà"
+          },
+          "d": {
+            "ko": "파스텔 톤 튜브라 기업 선물, 시즌 기획 세트 구성용으로 인기가 많아요.",
+            "vi": "Tuýp màu pastel, được ưa chuộng cho quà tặng doanh nghiệp và set quà theo mùa."
+          }
+        }
+      ],
+      "recommend": {
+        "ko": [
+          "기업 선물",
+          "화장품 매장",
+          "생활용품점",
+          "호텔 어메니티"
+        ],
+        "vi": [
+          "Quà doanh nghiệp",
+          "Cửa hàng mỹ phẩm",
+          "Cửa hàng gia dụng",
+          "Khách sạn"
+        ]
+      },
+      "shelf": {
+        "ko": "제조일로부터 30개월",
+        "vi": "30 tháng từ ngày sản xuất"
+      }
     },
     {
       "id": "scrubber-3",
       "icon": "sparkle",
       "color": "#E8E4DA",
-      "image": "",
       "category": "living",
       "name": {
         "ko": "주방 수세미 3입",
@@ -254,7 +673,144 @@
         "vi": "Hàn Quốc"
       },
       "size": "50×40×35cm",
-      "weight": "5.8kg"
+      "weight": "5.8kg",
+      "images": [
+        "images/scrubber-1.svg",
+        "images/scrubber-2.svg"
+      ],
+      "summary": {
+        "ko": "기름때도 한 번에, 오래 쓰는 3입 주방 수세미",
+        "vi": "Bộ 3 miếng rửa chén bền, sạch dầu mỡ"
+      },
+      "points": [
+        {
+          "icon": "sparkle",
+          "t": {
+            "ko": "이중 구조",
+            "vi": "Cấu trúc 2 lớp"
+          },
+          "d": {
+            "ko": "거품면 + 연마면",
+            "vi": "Mặt bọt + mặt chà"
+          }
+        },
+        {
+          "icon": "check",
+          "t": {
+            "ko": "긁힘 걱정 없음",
+            "vi": "Không trầy xước"
+          },
+          "d": {
+            "ko": "코팅 팬도 OK",
+            "vi": "Dùng được cho chảo chống dính"
+          }
+        },
+        {
+          "icon": "box",
+          "t": {
+            "ko": "3입 실속 구성",
+            "vi": "Bộ 3 tiết kiệm"
+          },
+          "d": {
+            "ko": "회전율 높은 제품",
+            "vi": "Bán chạy"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "img": "images/scrubber-2.svg",
+          "t": {
+            "ko": "풍성한 거품, 빠른 세척",
+            "vi": "Nhiều bọt, rửa nhanh"
+          },
+          "d": {
+            "ko": "촘촘한 스펀지가 세제를 적게 써도 거품을 많이 만들어요. 아래 연마면으로 눌어붙은 때도 쉽게 지워져요.",
+            "vi": "Bọt biển dày tạo nhiều bọt với ít nước rửa chén. Mặt chà bên dưới làm sạch vết bám cháy dễ dàng."
+          }
+        },
+        {
+          "img": "images/scrubber-1.svg",
+          "t": {
+            "ko": "걸어두는 진열 패키지",
+            "vi": "Bao bì treo trưng bày"
+          },
+          "d": {
+            "ko": "걸이형 투명 패키지라 생활용품 매장 진열대에 바로 걸 수 있어요.",
+            "vi": "Bao bì trong suốt có móc treo, đặt ngay lên kệ cửa hàng gia dụng."
+          }
+        }
+      ],
+      "recommend": {
+        "ko": [
+          "생활용품점",
+          "마트",
+          "다이소형 매장",
+          "식당 납품"
+        ],
+        "vi": [
+          "Cửa hàng gia dụng",
+          "Siêu thị",
+          "Cửa hàng đồng giá",
+          "Nhà hàng"
+        ]
+      },
+      "shelf": {
+        "ko": "해당 없음",
+        "vi": "Không áp dụng"
+      }
     }
-  ]
+  ],
+  "service": {
+    "title": {
+      "ko": "주문·배송 안내",
+      "vi": "Đặt hàng & giao hàng"
+    },
+    "items": [
+      {
+        "icon": "receipt",
+        "t": {
+          "ko": "견적 확인",
+          "vi": "Xác nhận báo giá"
+        },
+        "d": {
+          "ko": "요청 후 영업일 기준 24시간 안에 최종 견적서를 보내드려요.",
+          "vi": "Báo giá chính thức được gửi trong vòng 24 giờ làm việc."
+        }
+      },
+      {
+        "icon": "box",
+        "t": {
+          "ko": "출고",
+          "vi": "Xuất kho"
+        },
+        "d": {
+          "ko": "입금 확인 후 평일 오후 2시 이전이면 당일 출고해요.",
+          "vi": "Xuất kho trong ngày nếu xác nhận thanh toán trước 14:00 ngày thường."
+        }
+      },
+      {
+        "icon": "truck",
+        "t": {
+          "ko": "배송",
+          "vi": "Giao hàng"
+        },
+        "d": {
+          "ko": "전국 택배 1–2일 · 50만 원 이상 무료 배송 · 대량 주문은 화물 배송",
+          "vi": "Giao toàn quốc 1–2 ngày · Miễn phí từ 500.000₩ · Đơn lớn giao bằng xe tải"
+        }
+      },
+      {
+        "icon": "refresh",
+        "t": {
+          "ko": "교환·반품",
+          "vi": "Đổi trả"
+        },
+        "d": {
+          "ko": "파손·불량은 수령 후 7일 안에 사진과 함께 알려주시면 교환해 드려요.",
+          "vi": "Hàng lỗi/hư hỏng được đổi trong 7 ngày kèm hình ảnh."
+        }
+      }
+    ]
+  }
 }

@@ -2,6 +2,10 @@
 // 새 언어를 추가하려면 같은 키로 객체를 하나 더 만드세요. (예: en: {...})
 window.I18N = {
   ko: {
+    tab_detail: '상세정보', tab_price: '단가·주문', tab_info: '배송·안내',
+    key_points: '핵심 포인트', recommend_for: '이런 거래처에 추천해요', related: '함께 많이 찾는 제품',
+    ship_today: '평일 2시 전 당일 출고', spec_shelf: '유통기한', per_box: '/ 박스', est_total: '예상 금액',
+    demo_browse: '데모 거래처로 둘러보기', featured: '이번 주 추천', all_products: '전체 제품', see_detail: '자세히 보기',
     nav_home: '홈', nav_cart: '견적함', nav_orders: '요청내역', nav_account: '내 정보',
     search_ph: '제품 검색', cat_all: '전체', no_result: '검색 결과가 없어요',
     hero_title: '거래처 전용 도매 주문',
@@ -41,6 +45,10 @@ window.I18N = {
     not_found: '제품을 찾을 수 없어요'
   },
   vi: {
+    tab_detail: 'Chi tiết', tab_price: 'Giá & đặt hàng', tab_info: 'Giao hàng',
+    key_points: 'Điểm nổi bật', recommend_for: 'Phù hợp cho', related: 'Sản phẩm liên quan',
+    ship_today: 'Xuất kho trong ngày', spec_shelf: 'Hạn sử dụng', per_box: '/ thùng', est_total: 'Tạm tính',
+    demo_browse: 'Xem thử bằng tài khoản demo', featured: 'Gợi ý tuần này', all_products: 'Tất cả sản phẩm', see_detail: 'Xem chi tiết',
     nav_home: 'Trang chủ', nav_cart: 'Báo giá', nav_orders: 'Lịch sử', nav_account: 'Tài khoản',
     search_ph: 'Tìm sản phẩm', cat_all: 'Tất cả', no_result: 'Không tìm thấy sản phẩm',
     hero_title: 'Đặt hàng sỉ cho đối tác',

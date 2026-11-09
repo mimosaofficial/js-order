@@ -1,6 +1,6 @@
 // 오프라인에서도 앱 화면이 열리도록 하는 서비스워커 (네트워크 우선, 실패 시 캐시)
 // 파일을 수정해 배포할 때마다 버전 숫자를 올려 주세요.
-const CACHE = 'js-v1';
+const CACHE = 'js-v2';
 const ASSETS = [
   './', './index.html', './css/app.css',
   './js/i18n.js', './js/data.js', './js/app.js',

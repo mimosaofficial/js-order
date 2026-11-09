@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+<defs>
+  <radialGradient id="bg" cx="35%" cy="25%" r="90%"><stop offset="0" stop-color="#F8F0EA"/><stop offset="1" stop-color="#E3CFC4"/></radialGradient>
+  <radialGradient id="shadow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#5A4632" stop-opacity=".28"/><stop offset="1" stop-color="#5A4632" stop-opacity="0"/></radialGradient>
+  <linearGradient id="gloss" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".45" stop-color="#fff" stop-opacity=".35"/><stop offset=".6" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  
+</defs>
+<rect width="800" height="800" fill="url(#bg)"/>
+<rect y="560" width="800" height="240" fill="#000" opacity=".025"/>
+<ellipse cx="400" cy="670" rx="260" ry="36" fill="url(#shadow)" opacity="1"/><g transform="translate(300 420) rotate(-10) scale(0.95)">
+  <path d="M-80 -230 L80 -230 L70 170 Q0 182 -70 170 Z" fill="#E9D3CB"/>
+  <rect x="-84" y="-246" width="168" height="22" rx="4" fill="#E9D3CB" opacity=".85"/>
+  <path d="M-80 -230 L80 -230 L70 170 Q0 182 -70 170 Z" fill="url(#gloss)" opacity=".6"/>
+  <rect x="-48" y="168" width="96" height="70" rx="10" fill="#3B2F27"/>
+  <rect x="-48" y="168" width="96" height="10" fill="#000" opacity=".2"/>
+  <text x="0" y="-150" text-anchor="middle" font-family="'Cormorant Garamond','Noto Serif KR',Georgia,serif" font-size="16" letter-spacing="4" fill="#A57E58">JS SELECT</text>
+  <text x="0" y="-100" text-anchor="middle" font-family="'Cormorant Garamond','Noto Serif KR',Georgia,serif" font-size="40" font-style="italic" fill="#3B2F27">Hand</text>
+  <text x="0" y="-62" text-anchor="middle" font-family="'Cormorant Garamond','Noto Serif KR',Georgia,serif" font-size="40" font-style="italic" fill="#3B2F27">Cream</text>
+  <path d="M-30 -36 h60" stroke="#A57E58" stroke-width="2"/>
+  <text x="0" y="-8" text-anchor="middle" font-family="'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="16" fill="#8E7570">보습 핸드크림</text>
+  <text x="0" y="120" text-anchor="middle" font-family="'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="15" fill="#8E7570">50ml</text>
+</g><g transform="translate(470 400) rotate(6) scale(1.02)">
+  <path d="M-80 -230 L80 -230 L70 170 Q0 182 -70 170 Z" fill="#F3E6DE"/>
+  <rect x="-84" y="-246" width="168" height="22" rx="4" fill="#F3E6DE" opacity=".85"/>
+  <path d="M-80 -230 L80 -230 L70 170 Q0 182 -70 170 Z" fill="url(#gloss)" opacity=".6"/>
+  <rect x="-48" y="168" width="96" height="70" rx="10" fill="#3B2F27"/>
+  <rect x="-48" y="168" width="96" height="10" fill="#000" opacity=".2"/>
+  <text x="0" y="-150" text-anchor="middle" font-family="'Cormorant Garamond','Noto Serif KR',Georgia,serif" font-size="16" letter-spacing="4" fill="#A57E58">JS SELECT</text>
+  <text x="0" y="-100" text-anchor="middle" font-family="'Cormorant Garamond','Noto Serif KR',Georgia,serif" font-size="40" font-style="italic" fill="#3B2F27">Hand</text>
+  <text x="0" y="-62" text-anchor="middle" font-family="'Cormorant Garamond','Noto Serif KR',Georgia,serif" font-size="40" font-style="italic" fill="#3B2F27">Cream</text>
+  <path d="M-30 -36 h60" stroke="#A57E58" stroke-width="2"/>
+  <text x="0" y="-8" text-anchor="middle" font-family="'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="16" fill="#8E7570">보습 핸드크림</text>
+  <text x="0" y="120" text-anchor="middle" font-family="'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="15" fill="#8E7570">50ml</text>
+</g>
+</svg>
