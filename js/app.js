@@ -271,7 +271,7 @@
       p.tiers.map((tr, i) => {
         const nx = p.tiers[i + 1];
         const range = nx ? t('tier_range', { a: tr.min, b: nx.min - 1 }) : t('tier_range_from', { n: tr.min });
-        return `<tr class="${i === cur ? 'cur' : ''}"><td>${range}</td><td>${money(tr.price)}</td><td>${money(Math.round(tr.price / p.perBox))}</td></tr>`;
+        return `<tr class="${i === cur ? 'cur' : ''}" data-act="tier" data-k="${tr.min}" role="button" tabindex="0"><td>${range}</td><td>${money(tr.price)}</td><td>${money(Math.round(tr.price / p.perBox))}</td></tr>`;
       }).join('') + '</tbody>';
   }
 
@@ -622,6 +622,7 @@
         S.user = await API.login(S.lang === 'vi' ? 'Đối tác demo' : '데모 거래처', 'DEMO');
         toast(t('welcome', { c: S.user.company })); rerender();
         break;
+      case 'tier': setDetailQty(parseInt(k, 10)); break;
       case 'jump': {
         const el = document.getElementById(k);
         if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 118, behavior: 'smooth' });
@@ -732,6 +733,16 @@
       else toast('PIN이 맞지 않아요');
     } else if (fid === 'editform') saveProduct(form);
   });
+
+  // 상세페이지: 스크롤 위치에 맞춰 위쪽 탭 표시
+  window.addEventListener('scroll', () => {
+    if (!document.body.classList.contains('detail-mode')) return;
+    const ids = ['sec-detail', 'sec-price', 'sec-info'];
+    let cur = ids[0];
+    ids.forEach(id => { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top < 140) cur = id; });
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) cur = ids[ids.length - 1];
+    document.querySelectorAll('.dtabs button').forEach(x => x.classList.toggle('on', x.dataset.k === cur));
+  }, { passive: true });
 
   window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); S.installEvt = e; });
 

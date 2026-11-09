@@ -359,3 +359,6 @@ code { background: var(--bronze-soft); padding: 1px 6px; border-radius: 6px; fon
 .buybar-total span { font-size: 12px; color: var(--muted); }
 .buybar-total strong { font-family: var(--serif-kr); font-size: 20px; color: var(--espresso); }
 .detail-mode .toast { bottom: calc(96px + var(--safe-b)); }
+
+.tiers tbody tr { cursor: pointer; }
+.tiers tbody tr:not(.cur):active td { background: var(--bronze-soft); }
