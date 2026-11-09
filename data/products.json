@@ -1,0 +1,260 @@
+{
+  "company": {
+    "name": "JS",
+    "tagline": {
+      "ko": "JS TRADING · 거래처 전용",
+      "vi": "JS TRADING · Dành cho đối tác"
+    }
+  },
+  "currency": "KRW",
+  "categories": {
+    "food": {
+      "ko": "식품",
+      "vi": "Thực phẩm"
+    },
+    "beauty": {
+      "ko": "뷰티",
+      "vi": "Làm đẹp"
+    },
+    "living": {
+      "ko": "생활용품",
+      "vi": "Gia dụng"
+    }
+  },
+  "products": [
+    {
+      "id": "seaweed-72",
+      "icon": "leaf",
+      "color": "#E4E2D6",
+      "image": "",
+      "category": "food",
+      "name": {
+        "ko": "도시락김 4g × 72봉",
+        "vi": "Rong biển ăn liền 4g × 72 gói"
+      },
+      "desc": {
+        "ko": "참기름으로 구운 바삭한 도시락김이에요. 소포장이라 마트·편의점 진열용으로 좋아요.",
+        "vi": "Rong biển tẩm dầu mè giòn thơm, đóng gói nhỏ tiện lợi. Phù hợp cho siêu thị và cửa hàng tiện lợi."
+      },
+      "perBox": 72,
+      "moq": 5,
+      "tiers": [
+        {
+          "min": 5,
+          "price": 39000
+        },
+        {
+          "min": 20,
+          "price": 36000
+        },
+        {
+          "min": 50,
+          "price": 33000
+        }
+      ],
+      "stock": "in",
+      "restock": "",
+      "origin": {
+        "ko": "대한민국",
+        "vi": "Hàn Quốc"
+      },
+      "size": "40×30×25cm",
+      "weight": "3.2kg"
+    },
+    {
+      "id": "brown-rice-1kg",
+      "icon": "grain",
+      "color": "#ECE4D4",
+      "image": "",
+      "category": "food",
+      "name": {
+        "ko": "유기농 현미 1kg",
+        "vi": "Gạo lứt hữu cơ 1kg"
+      },
+      "desc": {
+        "ko": "국내산 유기농 인증 현미예요. 1kg 소포장으로 소매 판매에 알맞아요.",
+        "vi": "Gạo lứt hữu cơ trồng tại Hàn Quốc, có chứng nhận. Túi 1kg phù hợp bán lẻ."
+      },
+      "perBox": 10,
+      "moq": 3,
+      "tiers": [
+        {
+          "min": 3,
+          "price": 52000
+        },
+        {
+          "min": 10,
+          "price": 48000
+        },
+        {
+          "min": 30,
+          "price": 44000
+        }
+      ],
+      "stock": "low",
+      "restock": "",
+      "origin": {
+        "ko": "대한민국",
+        "vi": "Hàn Quốc"
+      },
+      "size": "35×25×20cm",
+      "weight": "10.4kg"
+    },
+    {
+      "id": "coffee-mix-100",
+      "icon": "cup",
+      "color": "#E5DCD2",
+      "image": "",
+      "category": "food",
+      "name": {
+        "ko": "3in1 커피믹스 100개입",
+        "vi": "Cà phê hòa tan 3in1 (100 gói)"
+      },
+      "desc": {
+        "ko": "부드러운 맛의 3in1 커피믹스예요. 사무실·숙박업소 납품용으로 인기가 많아요.",
+        "vi": "Cà phê 3in1 vị êm dịu, hộp 100 gói. Được ưa chuộng cho văn phòng và khách sạn."
+      },
+      "perBox": 10,
+      "moq": 5,
+      "tiers": [
+        {
+          "min": 5,
+          "price": 110000
+        },
+        {
+          "min": 20,
+          "price": 102000
+        },
+        {
+          "min": 50,
+          "price": 95000
+        }
+      ],
+      "stock": "in",
+      "restock": "",
+      "origin": {
+        "ko": "대한민국",
+        "vi": "Hàn Quốc"
+      },
+      "size": "45×35×30cm",
+      "weight": "12kg"
+    },
+    {
+      "id": "cica-mask-10",
+      "icon": "drop",
+      "color": "#DEE2DD",
+      "image": "",
+      "category": "beauty",
+      "name": {
+        "ko": "시카 진정 마스크팩 10매",
+        "vi": "Mặt nạ rau má làm dịu (10 miếng)"
+      },
+      "desc": {
+        "ko": "병풀 추출물이 들어간 진정 마스크팩 10매입이에요. 화장품 매장과 온라인 셀러에게 추천해요.",
+        "vi": "Mặt nạ chiết xuất rau má làm dịu da, hộp 10 miếng. Dành cho cửa hàng mỹ phẩm và người bán online."
+      },
+      "perBox": 40,
+      "moq": 2,
+      "tiers": [
+        {
+          "min": 2,
+          "price": 120000
+        },
+        {
+          "min": 10,
+          "price": 108000
+        },
+        {
+          "min": 30,
+          "price": 96000
+        }
+      ],
+      "stock": "in",
+      "restock": "",
+      "origin": {
+        "ko": "대한민국",
+        "vi": "Hàn Quốc"
+      },
+      "size": "38×28×22cm",
+      "weight": "6.5kg"
+    },
+    {
+      "id": "hand-cream-50",
+      "icon": "bottle",
+      "color": "#EBE1DC",
+      "image": "",
+      "category": "beauty",
+      "name": {
+        "ko": "보습 핸드크림 50ml",
+        "vi": "Kem dưỡng tay 50ml"
+      },
+      "desc": {
+        "ko": "끈적임 없이 빠르게 스며드는 핸드크림이에요. 선물세트 구성용으로도 좋아요.",
+        "vi": "Kem dưỡng tay thấm nhanh, không nhờn rít. Thích hợp làm quà tặng."
+      },
+      "perBox": 60,
+      "moq": 2,
+      "tiers": [
+        {
+          "min": 2,
+          "price": 150000
+        },
+        {
+          "min": 10,
+          "price": 135000
+        },
+        {
+          "min": 40,
+          "price": 120000
+        }
+      ],
+      "stock": "out",
+      "restock": "2026-11-25",
+      "origin": {
+        "ko": "대한민국",
+        "vi": "Hàn Quốc"
+      },
+      "size": "30×25×18cm",
+      "weight": "4.1kg"
+    },
+    {
+      "id": "scrubber-3",
+      "icon": "sparkle",
+      "color": "#E8E4DA",
+      "image": "",
+      "category": "living",
+      "name": {
+        "ko": "주방 수세미 3입",
+        "vi": "Miếng rửa chén (bộ 3)"
+      },
+      "desc": {
+        "ko": "기름때가 잘 지워지는 3입 주방 수세미예요. 생활용품점에서 회전이 빠른 제품이에요.",
+        "vi": "Bộ 3 miếng rửa chén, làm sạch dầu mỡ tốt. Sản phẩm bán chạy cho cửa hàng gia dụng."
+      },
+      "perBox": 100,
+      "moq": 3,
+      "tiers": [
+        {
+          "min": 3,
+          "price": 90000
+        },
+        {
+          "min": 15,
+          "price": 81000
+        },
+        {
+          "min": 50,
+          "price": 72000
+        }
+      ],
+      "stock": "in",
+      "restock": "",
+      "origin": {
+        "ko": "대한민국",
+        "vi": "Hàn Quốc"
+      },
+      "size": "50×40×35cm",
+      "weight": "5.8kg"
+    }
+  ]
+}

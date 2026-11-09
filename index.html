@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F1EADF">
+  <meta name="description" content="JS TRADING – 거래처 전용 도매 주문">
+  <title>JS 도매 주문</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Serif+KR:wght@500;600&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a href="#/" class="brand"><span class="wordmark" id="brandName">JS</span><span class="brand-sub">TRADING</span></a>
+      <button class="lang" data-act="lang" id="langBtn" aria-label="Language">KO</button>
+    </header>
+    <main id="view"><p class="loading">…</p></main>
+  </div>
+  <nav class="tabbar" id="tabbar"></nav>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
